@@ -11,8 +11,8 @@ UserWarning: The twython library has not been installed. Some functionality from
 >>> import string
 >>> import os
 >>> import matplotlib.pyplot as plt
->>> os.chdir('C:\Users\liamk\Desktop')
->>> messages = [line.rstrip() for line in open("tovadertext.txt")]
+>>> os.chdir('YOUR_PATH')
+>>> messages = [line.rstrip() for line in open("FILE")]
 >>> sid = SentimentIntensityAnalyzer()
 >>> len(messages)
 7086
