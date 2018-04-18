@@ -11,8 +11,8 @@ UserWarning: The twython library has not been installed. Some functionality from
 >>> import string
 >>> import matplotlib.pyplot as plt
 >>> import os
->>> os.chdir('C:\Users\liamk\Desktop') #Change working directory
->>> sentences = [line.rstrip() for line in open("vadertext.txt")] #Load text file to list
+>>> os.chdir('YOUR_PATH') #Change working directory
+>>> sentences = [line.rstrip() for line in open("FILE_NAME")] #Load text file to list
 >>> sid = SentimentIntensityAnalyzer() #Initialise Vader
 >>> len(sentences) #Code check
 7086
