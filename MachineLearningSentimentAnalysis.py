@@ -7,9 +7,9 @@ Type "copyright", "credits" or "license()" for more information.
 >>> from sklearn.naive_bayes import MultinomialNB
 >>> from sklearn.utils import shuffle
 >>> import os
->>> os.chdir('C:\Users\liamk\Desktop') #Change working directory
+>>> os.chdir('YOUR_PATH') #Change working directory
 >>> names =['Sentiment','Sentence'] #Create labels for dataset
->>> f = 'kaggle.txt' #Access file
+>>> f = 'FILE_NAME' #Access file
 >>> dataset = pd.read_csv(f, sep='\t', names=names) #Load file and labels to pandas dataframe, separate on tab
 >>> df = shuffle(dataset) #Randomly shuffle dataset
 >>> df.head() #Test to see if code is working
