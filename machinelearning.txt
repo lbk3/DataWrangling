@@ -1,0 +1,104 @@
+---------------------IMPORT LIBRARIES---------------------
+import pandas as pd
+
+import numpy as np
+
+from sklearn import model_selection
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+from sklearn.linear_model import LogisticRegression
+
+from sklearn.naive_bayes import MultinomialNB
+
+import os
+
+from sklearn.utils import shuffle
+
+
+---------------------FEATURE EXTRACTION---------------------
+
+os.chdir('C:\Users\Liam Keogh\Desktop')
+
+names =['Sentiment','Sentence']
+
+f = 'test.txt'
+
+dataset = pandas.read_csv(f, sep='\t', names=names)
+
+df = shuffle(dataset)
+
+df_x = dataset["Sentiment"]
+
+df_y = dataset["Sentence"]
+
+cv = TfidfVectorizer(min_df=1,stop_words='english')
+
+X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X,Y,test_size=0.2,random_state=4)
+
+x_train.head()
+
+x_traincv=cv.fit_transform(x_train)
+
+a=x_traincv.toarray()
+
+cv.inverse_transform(a[CHECK_ANY_ARRAY_ENTRY])
+
+---------------------NAIVE BAYES---------------------
+
+mnb=MultinomialNB()
+
+y_train=y_train.astype('int')
+
+mnb.fit(x_traincv,y_train)
+
+x_testcv = cv.transform(x_test)
+
+predNB = mnb.predict(x_testcv)
+
+actualNB =np.array(y_test)
+
+countNB = 0
+
+for i in range (len(pred)):
+    if predNB[i] == actualNB[i]:
+        countNB = countNB+1
+
+print(countNB)
+
+len(pred)
+
+Multinomial Naive Bayes Accuracy = countNB/pred
+
+resultNB = "Multinomial NB: " + str(multiNB)
+
+---------------------LOGISTIC REGRESSION---------------------
+
+lr = LogisticRegression()
+lr.fit(x_traincv,y_train)
+
+x_testcv = cv.transform(x_test)
+
+predLR = mnb.predict(x_testcv)
+
+actualLR =np.array(y_test)
+countLR = 0
+
+for i in range (len(pred)):
+    if predLR[i] == actualLR[i]:
+        countLR = countLR+1
+
+print(countLR)
+
+len(pred)
+
+Logistic Regression Accuracy = countLR/pred
+
+resultLR = "Logisitic Regression: " + str(logRegression)
+
+---------------------RESULTS---------------------
+
+print(resultNB + '\n' + resultLR)
+
+Multinomial NB: 0.987716763006
+Logisitic Regression: 0.987716763006
