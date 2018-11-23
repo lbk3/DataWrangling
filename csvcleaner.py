@@ -3,15 +3,10 @@ Type "copyright", "credits" or "license()" for more information.
 >>> import csv
 >>> import os
 >>> import pandas as pd
->>> os.chdir('C:/Users/liamk/Desktop')
->>> f = open('rawgps.txt','r')
-
-Traceback (most recent call last):
-  File "<pyshell#4>", line 1, in <module>
-    f = open('rawgps.txt','r')
-IOError: [Errno 2] No such file or directory: 'rawgps.txt'
->>> f = open('rawgps.csv','r')
+>>> os.chdir('yourpath')
+>>> f = open('yourfile.txt','r')
+>>> f = open('yourfile.csv','r')
 >>> df = pd.read_csv(f, header=None).dropna(how='all',axis=1)
->>> df.columns = ['Latitude', 'Longitude']
->>> df.to_csv('cleancoords.csv', sep='\t', encoding='utf-8')
+>>> df.columns = ['a', 'b']
+>>> df.to_csv('filename.extension', sep='\t', encoding='utf-8')
 >>> 
